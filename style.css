@@ -1,0 +1,73 @@
+/* ??????? */
+*{box-sizing:border-box}
+body{
+  margin:0; background:#0a0f1c; color:#fff;
+  font-family:'Cairo',system-ui,Arial;
+}
+.container{max-width:1100px; margin:auto; padding:12px}
+
+/* ?????? ??????? */
+.header{padding:14px 0}
+.logo{display:flex; align-items:center; gap:10px}
+.ghost-icon{width:64px; height:auto; border-radius:8px; box-shadow:0 0 18px #4cc9f0aa}
+.title{margin:0; font-weight:700; color:#4cc9f0; text-shadow:0 0 12px #4cc9f0}
+
+/* ?? ??????? */
+.electric-line{
+  height:2px; margin:14px 0;
+  background:linear-gradient(90deg,transparent,#4cc9f0,transparent);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+
+/* ???????? */
+.section-title{
+  text-align:center; color:#4cc9f0; margin:14px 0 10px;
+  text-shadow:0 0 10px #4cc9f0;
+}
+
+/* ??????? ??????? */
+.groups-grid,.services-grid{
+  display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.group-card,.service-card{
+  position:relative; background:rgba(255,255,255,.05); border-radius:12px; padding:18px; overflow:hidden; text-align:center;
+}
+.card-glow{
+  position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(76,201,240,.25), transparent 70%);
+  opacity:0; transition:opacity .3s;
+}
+.group-card:hover .card-glow,.service-card:hover .card-glow{opacity:1}
+
+/* ????? */
+.join-btn,.service-btn{
+  display:inline-block; margin-top:10px; padding:10px 18px;
+  color:#fff; background:#4cc9f0; border-radius:8px; text-decoration:none; font-weight:700;
+  position:relative; overflow:hidden; transition:background .25s,color .25s;
+}
+.join-btn:hover,.service-btn:hover{background:#4895ef; color:#0a0f1c}
+.btn-glow{
+  position:absolute; inset:0; left:-100%;
+  background:linear-gradient(90deg,transparent,rgba(76,201,240,.35),transparent);
+  transition:left .55s; pointer-events:none;
+}
+.join-btn:hover .btn-glow,.service-btn:hover .btn-glow{left:100%}
+
+/* ????? */
+.group-card.warning{border:1px solid #ff4d4d33}
+.join-btn.danger{background:#ff4d4d}
+.join-btn.danger:hover{background:#ff6666}
+
+/* ?????? ??????? ??????? */
+.floating-ghosts .ghost{
+  width:18px; height:18px; border-radius:50%; background:#4cc9f0; position:fixed; opacity:.35;
+  animation:float 6s infinite ease-in-out;
+}
+.ghost-1{top:18%; left:10%}
+.ghost-2{top:48%; left:55%; animation-delay:2s}
+.ghost-3{top:78%; left:28%; animation-delay:4s}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-16px)}100%{transform:translateY(0)}}
+
+/* ?????? */
+.footer{margin:18px 0; text-align:center; color:#9ecae1; font-size:14px}
